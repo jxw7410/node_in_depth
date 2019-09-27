@@ -14,6 +14,11 @@ mongoose.connect(keys.mongoURI, {useMongoClient: true }, () => {
   console.log('Connected to Mongo')
 });
 
+// Set up cache 
+require('./services/redis');
+
+// set up app
+
 const app = express();
 
 app.use(bodyParser.json());
